@@ -31,3 +31,12 @@ yarn.lock
 /test-results/
 /playwright-report/
 /playwright/.cache/
+
+#yarn berry
+.yarn/*
+!.yarn/cache
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
