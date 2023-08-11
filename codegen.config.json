@@ -1,0 +1,38 @@
+{
+  "schema": "https://dev.vendit.co.kr/graphql",
+  "generates": {
+    "./src/graphql/schema.types.ts": {
+      "plugins": [
+        "typescript",
+        "typescript-operations",
+        "typescript-resolvers"
+      ],
+      "config": {
+        "contextType": "./types#Context",
+        "useIndexSignature": true
+      }
+    },
+    "./src/graphql/gql-modules.d.ts": {
+      "plugins": [
+        "typescript-graphql-files-modules"
+      ]
+    },
+    "./src/graphql/types.react-apollo.tsx": {
+      "plugins": [
+        "typescript",
+        "typescript-operations",
+        "typescript-react-apollo"
+      ],
+      "config": {
+        "withHOC": false,
+        "withHooks": true,
+        "hooksImportFrom": "react-apollo"
+      }
+    },
+    "./src/graphql/fragmentTypes.json": {
+      "plugins": [
+        "fragment-matcher"
+      ]
+    }
+  }
+}

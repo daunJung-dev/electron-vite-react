@@ -56,7 +56,6 @@ async function createWindow(id: string) {
     kiosk: !isDevelopment,
     fullscreen: true,
     autoHideMenuBar: true,
-
     webPreferences: {
       preload,
       // Warning: Enable nodeIntegration and disable contextIsolation is not secure in production
@@ -75,7 +74,7 @@ async function createWindow(id: string) {
 
   win.on("closed", win.destroy);
 
-  if (url) {
+  if (devServerURL) {
     // electron-vite-vue#298
     win.loadURL(devServerURL);
     // Open devTool if the app is not packaged

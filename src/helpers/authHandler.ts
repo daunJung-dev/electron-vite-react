@@ -1,6 +1,5 @@
 /* eslint-disable no-underscore-dangle */
 import jwt, { JwtPayload } from "jsonwebtoken";
-import { LOCAL_STORAGE_KEY } from "./constants";
 import ElectronStore from "electron-store";
 import { electronStore } from "./electronStore";
 
