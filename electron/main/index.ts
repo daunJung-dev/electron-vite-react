@@ -3,6 +3,7 @@ import { release } from "node:os";
 import { join } from "node:path";
 import { update } from "./update";
 import { createFileRoute, createURLRoute } from "electron-router-dom";
+import ElectronStore from 'electron-store';
 
 const isDevelopment = process.env.NODE_ENV === "development";
 
@@ -32,6 +33,10 @@ if (!app.requestSingleInstanceLock()) {
   app.quit();
   process.exit(0);
 }
+
+// Electron store initialization
+ElectronStore.initRenderer();
+
 
 // Remove electron security warnings
 // This warning only shows in development mode
